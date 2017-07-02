@@ -1,0 +1,5 @@
+<div>
+    {% for c in category %}
+    <a href="{% url 'category' c.url c.topcategory.url %}">  <p> {{ c.name }}</p></a>
+    {% endfor %}
+</div>

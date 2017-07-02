@@ -1,0 +1,14 @@
+{% load goods_tags %}
+<ul>
+<h5>Категории:</h5>
+    {% for cat in topcategory %}
+         <li> <a href="{% url 'topcategory' cat.url %}"> {{ cat.name }}</a>
+
+            <div class="subcategory">
+                {% linkcategory cat %}
+            </div>
+            </li>
+
+
+    {% endfor %}
+</ul>

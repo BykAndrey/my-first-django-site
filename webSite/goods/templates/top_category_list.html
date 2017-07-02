@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load goods_tags %}
+{% block content %}
+    <h4>{{ name_cat }}</h4>
+    <div class="list_good">
+    {% for good in goods %}
+        {%  tag_good good %}
+
+    {% endfor %}
+    </div>
+{% endblock %}

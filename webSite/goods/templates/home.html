@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load goods_tags %}
+{% block content %}
+    <div class="slider">
+
+    </div>
+    <h4>Новинки</h4>
+    <div class="list_good">
+
+     {% for is in goods %}
+            {%  tag_good is %}
+    {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% load goods_tags %}
+<div class="good">
+<div class="image"><img src="{{ MEDIA_URL }}{{ good.images.url }}" width="180px"></div>
+
+
+   <!-- <a href="{{ good.url }}">-->
+         <a href="{% url 'cardgood' good.category.url good.url%}">
+        <p>{{ good.name }}</p></a>
+        <p class="cost">{{ good.price }} руб.</p>
+    <div class="addtocart">
+        Добавить в корзину!
+    </div>
+</div>
