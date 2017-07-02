@@ -1,0 +1,9 @@
+{% load goods_tags %}
+<div class="good">
+
+        <img src="{{ MEDIA_URL }}{{ good.images.url }}" width="180px">
+
+    <a href="{{ good.url }}">
+        {{ good.name }}</a>
+    {{ good.topcategory }}
+</div>

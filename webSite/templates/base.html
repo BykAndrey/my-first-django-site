@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load goods_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+<div class="page">
+    <header>
+            {% header %}
+    </header>
+    <div class="middle">
+        <div class="menu">
+            {% side_menu %}
+        </div>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+    <footer>
+
+    </footer>
+</body>
+</html>
