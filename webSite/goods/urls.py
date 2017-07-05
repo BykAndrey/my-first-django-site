@@ -26,6 +26,7 @@ urlpatterns =[
     url(r'^category/(?P<url>\w+)/$', topcategory,name='topcategory'),
     url(r'^category/(?P<url>\w+)/(?P<idtop>\w+)/$', category,name='category'),
     url(r'^card/(?P<urlcat>\w+)/(?P<urlgood>\w+)/$', cardGood,name='cardgood'),
+    url(r'^cart/$',cart,name='cart'),
 
     url(r'^$',mainPage),
 

@@ -9,8 +9,8 @@ register = template.Library()
 
 
 @register.inclusion_tag('header.html')
-def header():
-    return {}
+def header(request):
+    return {"request":request}
 
 @register.inclusion_tag('SideMenu/LinkCategory.html')
 def linkcategory(t):

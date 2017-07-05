@@ -18,5 +18,7 @@ from django.contrib import admin
 # -*- coding: utf-8 -*-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^',include("goods.urls")),
+    url(r'^user/', include("userdate.urls",namespace="userdate")),
+    url(r'^', include("goods.urls")),
+
 ]

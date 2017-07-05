@@ -65,6 +65,7 @@ class ProductAdmin(admin.ModelAdmin):
 class topclassAdmin(admin.ModelAdmin):
     list_display = ['name', 'dateCreated', 'dateUpdate']
     fields = ['name','published', 'description', 'url']
+
 admin.site.register(Topcategory, topclassAdmin)
 admin.site.register(Product,ProductAdmin)
 admin.site.register(Category,CategoryAdmin)

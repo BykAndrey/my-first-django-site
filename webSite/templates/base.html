@@ -5,15 +5,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 <div class="page">
     <header>
-            {% header %}
+            {% header request %}
     </header>
     <div class="middle">
         <div class="menu">
+
             {% side_menu %}
         </div>
         <div class="content">

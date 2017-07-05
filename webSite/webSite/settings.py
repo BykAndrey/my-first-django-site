@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'goods',
+    'userdate',
 ]
 
 MIDDLEWARE = [
@@ -58,6 +59,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, "templates/"),
             os.path.join(BASE_DIR, "goods/templates/"),
+            os.path.join(BASE_DIR, "userdate/templates/"),
         ],
         'APP_DIRS': True,
         'OPTIONS': {

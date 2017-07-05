@@ -48,12 +48,18 @@ class OrderingBaseModel(commonInfo):
 
 @python_2_unicode_compatible
 class Topcategory(OrderingBaseModel):
+    class Meta():
+        verbose_name_plural = "Категории"
+        verbose_name="Категория"
     name = models.CharField(max_length=150, verbose_name="Категория", default="")
     def __str__(self):
         return self.name
 
 @python_2_unicode_compatible
 class Category(OrderingBaseModel):
+    class Meta():
+        verbose_name_plural = "Подкатегории"
+        verbose_name="Подкатегория"
     topcategory=models.ForeignKey(Topcategory,blank=True,on_delete=models.CASCADE,null=True)
     name = models.CharField(max_length=150, verbose_name="Подкатегория", default="")
 
@@ -63,7 +69,9 @@ class Category(OrderingBaseModel):
 
 @python_2_unicode_compatible
 class Product(OrderingBaseModel):
-
+    class Meta():
+        verbose_name_plural = "Товары"
+        verbose_name="Товар"
     name = models.CharField(max_length=150, verbose_name="Продукт", default="")
     category = models.ForeignKey(Category)
     price=models.IntegerField(default=0,verbose_name="Цена", blank=False)
@@ -109,6 +117,9 @@ class ProductProprty(commonInfo):
 
 @python_2_unicode_compatible
 class FilterCategory(commonInfo):
+    class Meta():
+        verbose_name_plural="Фильтры категории"
+        verbose_name="Фильтр категории"
     category_id = models.ForeignKey(Category)
     name = models.CharField(default="", max_length=50)
 

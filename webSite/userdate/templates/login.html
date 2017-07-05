@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+      <h3>Авторизация пользователя</h3>
+        <div class="userAuth">
+    {{ error }}
+    <form method="post" action="{% url 'userdate:LogIn' %}">
+    {% csrf_token %}
+        {% for field in form %}
+                <label id="{{ field.id_for_label }}">{{ field.label }}:</label><br>
+               {{ field.as_widget }}<br>
+                {% for error in field.errors %}
+                   <p class="error">{{ error }}</p>
+                    {% endfor %}
+            {% endfor %}
+    <input type="submit" value="Войти">
+    </form>
+        </div>
+{% endblock %}

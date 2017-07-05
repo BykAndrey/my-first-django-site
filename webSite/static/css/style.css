@@ -181,3 +181,29 @@ color:rgb(155, 155, 155);
     border: 1px solid rgb(155, 155, 155);
     border-radius: 3px;
 }
+.userAuth{
+        width: 400px;
+        margin: auto;
+    }
+    .userAuth input[type="text"], .userAuth input[type="password"],.userAuth input[type="email"]{
+        width: 70%;
+        border:none;
+        height: 25px;
+        font-size: 16px;
+        line-height: 25px;
+        border-bottom: 4px solid rgba(0, 49, 218, 0.21);
+        transition:0.5s;
+    }
+    .userAuth input[type="submit"]{
+        width: 70%;
+        margin-top: 15px;
+        height: 30px;
+        border: 1px solid rgba(0, 49, 218, 0.15);
+    }
+    .userAuth input[type="text"]:focus{
+         border-bottom: 4px solid rgba(0, 49, 218, 1);
+    }
+     .userAuth p.error{
+         color: red;
+         font-size: 12px;
+     }

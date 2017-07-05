@@ -1,5 +1,15 @@
 <div class="head">
     <a href="/"><div class="logo">
-
+{{ qwe }}
     </div></a>
+{% load userdatetags %}
+    <div class="login">
+       {% if request.user.is_authenticated %}
+           Hello, <a href="{%  url 'userdate:profile' %}">{{ request.user.username }}</a>.
+            <a href="{% url 'userdate:LogOut' %}">Выйти</a>
+           {% else %}
+           <a href="{% url 'userdate:LogIn' %}"> Войти</a>
+       {% endif %}
+    </div>
+    <div class="cart"><a href="{% url 'cart' %}">Корзина</a></div>
 </div>
