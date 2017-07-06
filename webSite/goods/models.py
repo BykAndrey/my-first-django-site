@@ -5,9 +5,11 @@ import uuid
 
 
 from django.db import models
-
+import PIL
 # Create your models here.
-
+import PIL.Image as Image
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
 
 from django.utils.encoding import python_2_unicode_compatible
 
@@ -77,7 +79,17 @@ class Product(OrderingBaseModel):
     price=models.IntegerField(default=0,verbose_name="Цена", blank=False)
     is_hit=models.BooleanField(default=False,verbose_name="Хит")
     is_new = models.BooleanField(default=False,verbose_name="Новинка")
-    images=models.ImageField(null=True, blank=True,upload_to=make_upload_path,verbose_name="Изображение")
+    images=models.ImageField(
+        null=True,
+        blank=True,
+        upload_to=make_upload_path,
+        verbose_name="Изображение",
+        )
+    images_trumbnail=ImageSpecField(source="images",
+                                    processors=[ResizeToFill(200,150)],
+                                    format="JPEG",
+                                    options={'quality':60})
+
     def save(self, *args, **kwargs):
         if self.category:
             super(Product, self).save(*args, **kwargs)

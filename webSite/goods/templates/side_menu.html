@@ -2,7 +2,7 @@
 <ul>
 <h5>Категории:</h5>
     {% for cat in topcategory %}
-         <li> <a href="{% url 'topcategory' cat.url %}"> {{ cat.name }}</a>
+         <li> <a href="{% url 'goods:topcategory' cat.url %}"> {{ cat.name }}</a>
 
             <div class="subcategory">
                 {% linkcategory cat %}

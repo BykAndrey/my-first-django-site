@@ -19,6 +19,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^user/', include("userdate.urls",namespace="userdate")),
-    url(r'^', include("goods.urls")),
+    url(r'^', include("goods.urls",namespace="goods")),
 
 ]

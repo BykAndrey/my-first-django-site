@@ -7,6 +7,15 @@ from goods.views import *
 register = template.Library()
 
 
+from imagekit import ImageSpec,register as reg
+from imagekit.processors import ResizeToFill
+
+class Thumbnail(ImageSpec):
+    processors = [ResizeToFill(100, 50)]
+    format = 'JPEG'
+    options = {'quality': 60}
+
+reg.generator('goods:thumbnail', Thumbnail)
 
 @register.inclusion_tag('header.html')
 def header(request):
@@ -29,3 +38,4 @@ def tag_good(good):
     #cats = WholeUrl(good)
     #good.url=reverse('cardgood',args={cats:u'urlcat',good.url:u'urlgood'})
     return {'good':good}
+
